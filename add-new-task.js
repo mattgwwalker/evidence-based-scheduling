@@ -25,15 +25,13 @@ $("#AddNewTask-SaveAndStartButton").on('click', function() {
 
     // Save the task to the database
     task.save().then(function(taskId) {
-	// TODO: Set the task as the active task and start it
-	/*
-	activeTask.task = task;
+	// Set the task as the active task and start it
+	return activeTask.set(task);
+    }).then(function() {
 	activeTask.timer.start();
 	console.log(JSON.stringify(activeTask));
-	*/
-
 	// Load the task detail page
 	window.location.href = "task-detail.html?taskId="+taskId;
-	return taskId;
     });
+
 });
