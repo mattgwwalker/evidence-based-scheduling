@@ -151,8 +151,10 @@ Task.prototype.load = function(taskId) {
 	    try {
 		var tasksStore = transaction.objectStore("tasks");
 		console.log("taskId: "+taskId);
+		console.log("typeof taskId: "+typeof(taskId));
 		var getRequest = tasksStore.get(taskId);
 		getRequest.onsuccess = function(event) {
+		    console.log("result: "+JSON.stringify(this.result));
 		    try {
 			thisTask.title = this.result.title;
 			thisTask.description = this.result.description;

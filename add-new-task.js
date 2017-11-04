@@ -31,7 +31,7 @@ $("#AddNewTask-SaveAndStartButton").on('click', function() {
 	activeTask.timer.start();
 	console.log(JSON.stringify(activeTask));
 	// Load the task detail page
-	window.location.href = "task-detail.html?taskId="+taskId;
+	window.location.href = "task-detail.html?taskId="+task.id;
     });
 
 });
