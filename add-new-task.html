@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Evidence-Based Scheduling</title>
+    <title>Add New Task</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,15 +10,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Evidence-Based Scheduling</h1>
+    <h1>Add New Task</h1>
 
-    <p>The next step in development will be to create the "new task"
-    and "task detail" views.  For this release, the new task view will
-    go straight to the task detail view and then back again, but this
-    is not the intended final functionality.  To start press the "Add
-    New Task" button.</p>
+    <form>
+      <div class="form-group">
+	<input type="text" class="form-control" id="AddNewTask-Title" placeholder="Task Title">
+      </div>
+
+      <div class="form-group">
+	<textarea class="form-control" id="AddNewTask-Description" placeholder="Task Description"></textarea>
+      </div>
+	
+      <div class="form-group">
+	<input type="number" id="AddNewTask-DurationNumber" placeholder="Estimated Duration">
+
+	<div class="btn-group" data-toggle="buttons">
+	  <label class="btn btn-secondary active">
+	    <input type="radio" name="options" id="AddNewTask-DurationMinutes" autocomplete="off" checked> Minutes
+	  </label>
+	  <label class="btn btn-secondary">
+	    <input type="radio" name="options" id="AddNewTask-DurationHours" autocomplete="off"> Hours
+	  </label>
+	</div>
+      </div>
+
+    </form>
     
-    <a href="add-new-task.html" class="btn btn-primary">Add New Task</a>
+    <button id="AddNewTask-SaveAndStartButton" class="btn btn-primary">Save & Start</button>
+
     
     <!-- Optional JavaScript -->
 
@@ -29,6 +48,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
     <script src="timer.js"></script>
+    <script src="task.js"></script>
+    <script src="add-new-task.js"></script>
 
   </body>
 </html>
